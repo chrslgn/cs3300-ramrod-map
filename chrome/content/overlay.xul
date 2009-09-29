@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE overlay SYSTEM "chrome://htmlruby/locale/global.ent">
+<overlay id="simplemap-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
+<script type="application/x-javascript" src="htmlruby.js"/>
+<statusbar id="status-bar">
+<statusbarpanel id="simplemap-entities" collapsed="true">
+
+</statusbarpanel>
+</statusbar>
+</overlay>

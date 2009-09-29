@@ -1,0 +1,3 @@
+content htmlruby chrome/content/
+overlay chrome://browser/content/browser.xul chrome://simplemap/content/overlay.xul
+locale htmlruby en chrome/locale/en/
