@@ -1,0 +1,1 @@
+window.addEventListener('load', function() { alert('simple map!'); }, false);
