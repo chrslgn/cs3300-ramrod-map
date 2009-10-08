@@ -16,4 +16,9 @@
 </button>
 </statusbarpanel>
 </statusbar>
+
+<popup id="contentAreaContextMenu">
+  <menuitem id="show-on-map" label="Show on map"/>
+</popup>
+
 </overlay>
