@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0"?>
-<!DOCTYPE overlay SYSTEM "chrome://htmlruby/locale/global.ent">
+<!DOCTYPE overlay SYSTEM "chrome://simplemap/locale/global.ent">
 <overlay id="simplemap-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
+<script type="application/x-javascript" src="Address.js"/>
 <script type="application/x-javascript" src="Controller.js"/>
+<script type="application/x-javascript" src="Parser.js"/>
+<script type="application/x-javascript" src="Preferences.js"/>
+<script type="application/x-javascript" src="Tagger.js"/>
 <statusbar id="status-bar">
 <statusbarpanel id="simplemap-entities" collapsed="true">
 
