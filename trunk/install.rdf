@@ -17,7 +17,7 @@
 	<em:description></em:description>
 	<em:creator>Team Ramrod</em:creator>
 	<em:homepageURL></em:homepageURL>
-	<em:optionsURL></em:optionsURL>
+	<em:optionsURL>chrome://simplemap/content/options.xul</em:optionsURL>
 	<em:iconURL></em:iconURL>
 </Description>
 </RDF>

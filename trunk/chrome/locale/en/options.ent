@@ -1,0 +1,6 @@
+<!ENTITY	enableList.label	"Enable address list">
+<!ENTITY	enableList.tooltip	"Shows the address list button in the status bar">
+<!ENTITY	enableParser.label	"Enable automatic parsing">
+<!ENTITY	enableParser.tooltip	"Automatically parses the page for addresses">
+<!ENTITY	location.label	"My location">
+<!ENTITY	location.tooltip	"stuff">

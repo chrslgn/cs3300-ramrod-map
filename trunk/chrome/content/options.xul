@@ -1,11 +1,30 @@
 ﻿<?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<!DOCTYPE prefwindow SYSTEM "chrome://htmlruby/locale/options.ent">
+<!DOCTYPE prefwindow SYSTEM "chrome://simplemap/locale/options.ent">
 <prefwindow id="simplemap-prefs" title="Simple Map Options" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <prefpane id="simplemap-prefs-basic" label="Basic">
  <preferences>
-
+  <preference id="simplemap_parser_enabled" name="extensions.simplemap.enableParser" type="bool"/>
+  <preference id="simplemap_location" name="extensions.simplemap.location" type="string"/>
+  <preference id="simplemap_list_enabled" name="extensions.simplemap.enableList" type="bool"/>
  </preferences>
-
+<grid>
+  <columns>
+   <column/>
+   <column width="70"/>
+  </columns>
+  <rows>
+   <hbox>
+    <checkbox preference="simplemap_parser_enabled" id="enableParser" tooltiptext="&enableParser.tooltip;" label="&enableParser.label;"/>
+   </hbox>
+   <hbox>
+    <checkbox preference="simplemap_list_enabled" id="enableList" tooltiptext="&enableList.tooltip;" label="&enableList.label;"/>
+   </hbox>
+   <row>
+    <label control="simplemap_location" value="&location.label;" tooltiptext="&location.tooltip;"/>
+    <textbox preference="simplemap_location" id="location" rows="5" tooltiptext="&location.tooltip;"/>
+   </row>
+  </rows>
+</grid>
 </prefpane>
 </prefwindow>
