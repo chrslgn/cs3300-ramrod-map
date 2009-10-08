@@ -6,7 +6,7 @@ var Tagger = function(bodyDOM) {
 		var exstr = '(' + address.getStreet() + '[\\s\\S]+' + address.getCity() + ',[\\s\\S]+' + address.getState() + '[\\s\\S]+' + address.getZip() + '(-[0-9]{4})?' + ')';
 	//	Components.utils.reportError(exstr); // DEBUG
 		var ex = new RegExp(exstr, 'm');
-		var link = '#';
+		var link = GoogleMap.getLinkToAddress(address);
 		var results = this.DOM.innerHTML.match(ex);
 	//	Components.utils.reportError(results[0]); // DEBUG
 		this.DOM.innerHTML = this.DOM.innerHTML.replace(results[0], results[0] + '<br/><a href="' + link + '">map this</a>');
