@@ -3,6 +3,7 @@
 <overlay id="simplemap-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
 <script type="application/x-javascript" src="Address.js"/>
 <script type="application/x-javascript" src="Controller.js"/>
+<script type="application/x-javascript" src="GoogleMap.js"/>
 <script type="application/x-javascript" src="Parser.js"/>
 <script type="application/x-javascript" src="Preferences.js"/>
 <script type="application/x-javascript" src="Tagger.js"/>
