@@ -22,7 +22,7 @@
    </hbox>
    <row>
     <label control="simplemap_location" value="&location.label;" tooltiptext="&location.tooltip;"/>
-    <textbox preference="simplemap_location" id="location" rows="5" tooltiptext="&location.tooltip;"/>
+    <textbox preference="simplemap_location" id="location" maxlength="200" tooltiptext="&location.tooltip;"/>
    </row>
   </rows>
 </grid>
