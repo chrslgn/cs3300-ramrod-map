@@ -1,11 +1,11 @@
-var Controller = function(pageDOM) {
+var Controller = function(bodyDOM) {
 	Controller.preferences = null;
 	Controller.setPreferences = function(preferences) {
 	};
 	Controller.getPreferences = function() {
 	};
 	
-	this.DOM = pageDOM;
+	this.DOM = bodyDOM;
 	
 	this.addresses = null; 
 	this.parsePage = function() {
@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
 		var doc = e.originalTarget;
 		if (doc.body === undefined)
 			return null;
-		var c = new Controller(doc);
+		var c = new Controller(doc.body);
 		c.parsePage();
 	}, true);
 }, false);
