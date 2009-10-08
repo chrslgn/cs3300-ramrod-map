@@ -1,9 +1,14 @@
 var Controller = function(bodyDOM) {
 	Controller.preferences = null;
 	Controller.setPreferences = function(preferences) {
+		Controller.preferences = preferences;
 	};
 	Controller.getPreferences = function() {
+		return Controller.preferences;
 	};
+	
+	if (!Controller.preferences) 
+		Controller.preferences = Preferences;
 	
 	this.DOM = bodyDOM;
 	
@@ -24,15 +29,6 @@ var Controller = function(bodyDOM) {
 };
 
 window.addEventListener('load', function() {
-	/*
-	var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService);
-	prefs = prefs.getBranch('extensions.simplemap.');
-	prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
-	prefs.getCharPref('charPrefName');
-	prefs.getBoolPref('boolPrefName');
-	prefs.addObserver('', this, false);
-	*/
-
 	var appcontent = document.getElementById('appcontent');
 	if (!appcontent)
 		return null;
