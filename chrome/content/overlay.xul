@@ -8,8 +8,12 @@
 <script type="application/x-javascript" src="Preferences.js"/>
 <script type="application/x-javascript" src="Tagger.js"/>
 <statusbar id="status-bar">
-<statusbarpanel id="simplemap-entities" collapsed="true">
-
+<statusbarpanel id="simplemap-entities" collapsed="false">
+<button type="menu" label="Simple Map">
+  <menupopup>
+    <menuitem label="Options"/>
+  </menupopup>
+</button>
 </statusbarpanel>
 </statusbar>
 </overlay>
