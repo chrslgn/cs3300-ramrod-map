@@ -1,21 +1,26 @@
-var Controller = {
-	preferences: null,
-	addresses: null,
-	parsePage: function(document) {
-		alert('"stuff happens" by simplemap');
-	},
-	getPreferences: function() {
-	},
-	setAddresses: function(addresses) {
-	},
-	setPreferences: function(preferences) {
-	},
-	mapAddress: function(address) {
-	},
-	showDirections: function(string) {
-	},
-	newWindow: function(){
-	}
+var Controller = function(pageDOM) {
+	Controller.preferences = null;
+	Controller.setPreferences = function(preferences) {
+	};
+	Controller.getPreferences = function() {
+	};
+	
+	this.DOM = pageDOM;
+	
+	this.addresses = null; 
+	this.parsePage = function() {
+		var p = new Parser(this.DOM);
+		this.setAddresses(p.getAddresses());
+	};
+	this.setAddresses = function(addrs) {
+		this.addresses = addrs;
+	};
+	this.mapAddress = function(address) {
+	};
+	this.showDirections = function(string) {
+	};
+	this.newWindow = function(){
+	};
 };
 
 window.addEventListener('load', function() {
@@ -35,6 +40,7 @@ window.addEventListener('load', function() {
 		var doc = e.originalTarget;
 		if (doc.body === undefined)
 			return null;
-		Controller.parsePage(doc);
+		var c = new Controller(doc);
+		c.parsePage();
 	}, true);
 }, false);
