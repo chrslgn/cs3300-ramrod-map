@@ -1,14 +1,11 @@
 var Controller = function(bodyDOM) {
-	Controller.preferences = null;
-	Controller.setPreferences = function(preferences) {
-		Controller.preferences = preferences;
+	this.preferences = Preferences;
+	this.setPreferences = function(preferences) {
+		this.preferences = preferences;
 	};
-	Controller.getPreferences = function() {
-		return Controller.preferences;
+	this.getPreferences = function() {
+		return this.preferences;
 	};
-	
-	if (!Controller.preferences) 
-		Controller.preferences = Preferences;
 	
 	this.DOM = bodyDOM;
 	
@@ -32,11 +29,22 @@ window.addEventListener('load', function() {
 	var appcontent = document.getElementById('appcontent');
 	if (!appcontent)
 		return null;
+	
+	var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService);
+	prefs = prefs.getBranch('extensions.simplemap.');
+	prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
+	Preferences.setMyLocation(prefs.getCharPref('location'));
+	Preferences.setAddressDialogListOn(prefs.getBoolPref('enableList'));
+	Preferences.setParserOn(prefs.getBoolPref('enableParser'));
+	
 	appcontent.addEventListener('DOMContentLoaded', function(e) {
 		var doc = e.originalTarget;
 		if (doc.body === undefined)
 			return null;
 		var c = new Controller(doc.body);
-		c.parsePage();
+		prefs.addObserver('', c.preferences, false);
+	//	Components.utils.reportError(c.getPreferences()); // DEBUG
+		if (c.getPreferences().getParserOn())
+			c.parsePage();
 	}, true);
 }, false);
