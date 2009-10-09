@@ -1,37 +1,39 @@
 var Preferences = {
-	parserOn: true,
+	parserOn: null,
 	myLocation: null,
 	AddressListDialogOn: null,
 	
 	toString: function() {
-		return this.getStreet() + ', ' + this.getCity() + ', ' + this.getState() + ' ' + this.getZip();
+		return 'Preferences [parser:' + Preferences.getParserOn() + '; list:' + Preferences.getAddressDialogListOn() + '; location:' + Preferences.getMyLocation() + ']';
 	},
 	
 	getParserOn: function() {
-		return this.parserOn;
+		return Preferences.parserOn;
 	},
 	
 	getMyLocation: function() {
-		return this.myLocation;
+		return Preferences.myLocation;
 	},
 	
 	getAddressDialogListOn: function() {
-		return this.AddressListDialogOn;
+		return Preferences.AddressListDialogOn;
 	},
 	
 	setAddressDialogListOn: function(on) {
-		this.AddressListDialogOn = on;
+		Preferences.AddressListDialogOn = on;
 	},
 	
 	setParserOn: function(on) {
-		this.parserOn = on;
+	//	Components.utils.reportError('prefs parser: ' + on); // DEBUG
+		Preferences.parserOn = on;
 	},
 	
 	setMyLocation: function(a) {
-		this.myLocation = a;
+		Preferences.myLocation = a;
 	},
 	
 	observe: function(subject, topic, data) {
+	//	Components.utils.reportError(subject + '|' + topic + '|' + data); // DEBUG
 		if (topic != 'nsPref:changed')
 			return null;
 		var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService);
@@ -49,12 +51,3 @@ var Preferences = {
 		}
 	}
 };
-
-
-var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService);
-prefs = prefs.getBranch('extensions.simplemap.');
-prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
-prefs.getCharPref('charPrefName');
-prefs.getBoolPref('boolPrefName');
-prefs.addObserver('', Preferences, false);
-delete prefs;
