@@ -2,22 +2,36 @@
 <!DOCTYPE overlay SYSTEM "chrome://simplemap/locale/global.ent">
 <overlay id="simplemap-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<window
-    id="address-list-window"
-    title="Addresses Found"
-    persist="screenX screenY width height"
-    orient="horizontal"
-    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<window
+    	id="address-list-window"
+    	title="Addresses Found"
+    	persist="screenX screenY width height"
+    	orient="horizontal"
+    	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<script type="application/x-javascript" src="Address.js"/>
-<script type="application/x-javascript" src="Controller.js"/>
-<script type="application/x-javascript" src="GoogleMap.js"/>
-<script type="application/x-javascript" src="Parser.js"/>
-<script type="application/x-javascript" src="Preferences.js"/>
-<script type="application/x-javascript" src="Tagger.js"/>
+		<script type="application/x-javascript" src="Address.js"/>
+		<script type="application/x-javascript" src="Controller.js"/>
+		<script type="application/x-javascript" src="GoogleMap.js"/>
+		<script type="application/x-javascript" src="Parser.js"/>
+		<script type="application/x-javascript" src="Preferences.js"/>
+		<script type="application/x-javascript" src="Tagger.js"/>
+	
+		<vbox flex="1">
+			<description>
+	    	The following addresses were found on this page:
+			</description>
+			
+			<listbox id="address-list">
+				<listitem label="blah"/>
+				<listitem label="blah 2"/>
+			</listbox>
+			
+			<hbox flex="1">
+				<button label="Map It!"/>
+				<button label="Get Directions!"/>
+				<button label="Cancel"/>
+			</hbox>
+		</vbox>
 
-	<description>
-    The following addresses were found on this page:
-	</description>
-
+	</window>
 </overlay>
