@@ -7,6 +7,7 @@
 <script type="application/x-javascript" src="Parser.js"/>
 <script type="application/x-javascript" src="Preferences.js"/>
 <script type="application/x-javascript" src="Tagger.js"/>
+<script type="application/x-javascript" src="overlay.js"/>
 <statusbar id="status-bar">
 <statusbarpanel id="simplemap-entities" collapsed="false">
 <button type="menu" label="Simple Map">
