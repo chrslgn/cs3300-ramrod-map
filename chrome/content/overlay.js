@@ -25,6 +25,10 @@ window.addEventListener('load', function() {
 			c.tagPage();
 	}, true);
 	
+	document.getElementById('simplemap-menu').addEventListener('popupshowing', function(e) {
+		document.getElementById('simplemap-addressList').hidden = !Preferences.getAddressDialogListOn();
+	}, false);
+	
 	var showOnMap = document.getElementById('show-on-map');
 	showOnMap.addEventListener('command', function(e) {
 		var c = new Controller();
