@@ -17,8 +17,12 @@ window.addEventListener('load', function() {
 		var c = new Controller(doc.body);
 		prefs.addObserver('', c.preferences, false);
 	//	Components.utils.reportError(c.getPreferences()); // DEBUG
-		if (c.getPreferences().getParserOn())
+		
+		doc.SimpleMap = c;
+		if (c.getPreferences().getParserOn() || c.getPreferences().getAddressDialogListOn())
 			c.parsePage();
+		if (c.getPreferences().getParserOn())
+			c.tagPage();
 	}, true);
 	
 	var showOnMap = document.getElementById('show-on-map');

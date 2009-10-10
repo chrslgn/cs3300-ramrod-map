@@ -14,6 +14,12 @@ var Controller = function(bodyDOM) {
 		var p = new Parser(this.DOM);
 		this.setAddresses(p.getAddresses());
 	};
+	this.tagPage = function() {
+		var t = new Tagger(this.DOM);
+		for (var i=0,a; a=this.addresses[i]; i++) {
+			t.tagText(a);
+		}
+	};
 	this.setAddresses = function(addrs) {
 		this.addresses = addrs;
 	};
