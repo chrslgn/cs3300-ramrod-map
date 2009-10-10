@@ -1,39 +1,37 @@
 <?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://simplemap/locale/global.ent">
-<overlay id="simplemap-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<window
+   	id="address-list-window"
+   	title="Addresses Found"
+   	persist="screenX screenY width height"
+   	orient="horizontal"
+   	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<window
-    	id="address-list-window"
-    	title="Addresses Found"
-    	persist="screenX screenY width height"
-    	orient="horizontal"
-    	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="Address.js"/>
+	<script type="application/x-javascript" src="Controller.js"/>
+	<script type="application/x-javascript" src="GoogleMap.js"/>
+	<script type="application/x-javascript" src="Parser.js"/>
+	<script type="application/x-javascript" src="Preferences.js"/>
+	<script type="application/x-javascript" src="Tagger.js"/>
+	<script type="application/x-javascript" src="addressList.js"/>
 
-		<script type="application/x-javascript" src="Address.js"/>
-		<script type="application/x-javascript" src="Controller.js"/>
-		<script type="application/x-javascript" src="GoogleMap.js"/>
-		<script type="application/x-javascript" src="Parser.js"/>
-		<script type="application/x-javascript" src="Preferences.js"/>
-		<script type="application/x-javascript" src="Tagger.js"/>
-		<script type="application/x-javascript" src="addressList.js"/>
-	
-		<vbox flex="1">
-			<description>
-	    	The following addresses were found on this page:
-			</description>
-			
-			<listbox id="address-list">
-				<listitem label="2028 maple ridge drive acworth ga 30101"/>
-				<listitem label="2006 maple ridge court acworth ga 30101"/>
-				<listitem label="rhodondendron drive acworth ga 30102"/>
-			</listbox>
-			
-			<hbox flex="1">
-				<button label="Map It!" oncommand="showMap();"/>
-				<button label="Get Directions!" oncommand="showDirections();"/>
-				<button label="Cancel" oncommand="window.close();"/>
-			</hbox>
-		</vbox>
+	<vbox flex="1">
+		<description>
+    	The following addresses were found on this page:
+		</description>
+		
+		<listbox id="address-list">
+			<listitem label="2028 maple ridge drive acworth ga 30101"/>
+			<listitem label="2006 maple ridge court acworth ga 30101"/>
+			<listitem label="rhodondendron drive acworth ga 30102"/>
+		</listbox>
+		
+		<hbox flex="1">
+			<button label="Map It!" oncommand="showMap();"/>
+			<button label="Get Directions!" oncommand="showDirections();"/>
+			<button label="Cancel" oncommand="window.close();"/>
+		</hbox>
+	</vbox>
 
-	</window>
-</overlay>
+</window>
