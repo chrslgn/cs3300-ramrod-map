@@ -32,3 +32,28 @@ var Address = function() {
 		this.zip = str;
 	};
 };
+Address.fromString = function(str) {
+	var ex2 = /^\s*(\S[^\r\n]+\S)\s?(\S[^\r\n]*\S)?\s+(\S[^\r\n]+\S),\s+([A-Z]{2})\s+([0-9]{5}).*$/m;
+	var res = str.match(ex2);
+	if (!res) {
+		return null;
+	}
+	
+	// DEBUG start
+/*	str = i + ' = ';
+	for (var j=0,s; j<6; j++) {
+		s = res[j];
+		str += j + ': ' + s + '\r\n';
+	}
+	Components.utils.reportError(str);
+*/	// DEBUG end
+
+	
+	var addr = new Address();
+	addr.setStreet(res[1]);
+	addr.setCity(res[3]);
+	addr.setState(res[4]);
+	addr.setZip(res[5]);
+//	Components.utils.reportError(addr.toString()); // DEBUG	
+	return addr;
+};
