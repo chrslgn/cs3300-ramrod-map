@@ -18,6 +18,9 @@ var Controller = function(bodyDOM) {
 		this.addresses = addrs;
 	};
 	this.mapAddress = function(address) {
+		var addr = Address.fromString(address);
+		var link = GoogleMap.getLinkToAddress(addr);
+		gBrowser.selectedTab = gBrowser.addTab(link);
 	};
 	this.showDirections = function(string) {
 	};
