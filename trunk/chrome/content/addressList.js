@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
 		var addr = document.getElementById("address-list").getSelectedItem(0).getAttribute("label");
 		var link = GoogleMap.getLinkToAddress(addr);
 		
-		gBrowser.selectedTab = gBrowser.addTab(link);
+		browser.selectedTab = browser.addTab(link);
 	},false);
 	
 	document.getElementById("show-directions").addEventListener("command", function(e) {
@@ -25,7 +25,7 @@ window.addEventListener('load', function() {
 		var addr = document.getElementById("address-list").getSelectedItem(0).getAttribute("label");
 		var link = GoogleMap.getLinkToAddressDirection(addr, c.getPreferences().getMyLocation());
 		
-		gBrowser.selectedTab = gBrowser.addTab(link);
+		browser.selectedTab = browser.addTab(link);
 	}, false);
 	
 }, false);
