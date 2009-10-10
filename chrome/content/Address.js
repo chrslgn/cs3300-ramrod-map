@@ -33,7 +33,7 @@ var Address = function() {
 	};
 };
 Address.fromString = function(str) {
-	var ex2 = /^\s*(\S[^\r\n]+\S)\s?(\S[^\r\n]*\S)?\s+(\S[^\r\n]+\S),\s+([A-Z]{2})\s+([0-9]{5}).*$/m;
+	var ex2 = /^\s*(\S[^\r\n]+\S)\s*(\S[^\r\n]*\S)?\s+(\S[^\r\n]+\S),\s+([A-Z]{2})\s+([0-9]{5}).*$/m;
 	var res = str.match(ex2);
 	if (!res) {
 		return null;
