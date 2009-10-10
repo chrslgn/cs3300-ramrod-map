@@ -22,14 +22,15 @@
 			</description>
 			
 			<listbox id="address-list">
-				<listitem label="blah"/>
-				<listitem label="blah 2"/>
+				<listitem label="2028 maple ridge drive acworth ga 30101"/>
+				<listitem label="2006 maple ridge court acworth ga 30101"/>
+				<listitem label="rhodondendron drive acworth ga 30102"/>
 			</listbox>
 			
 			<hbox flex="1">
-				<button label="Map It!"/>
-				<button label="Get Directions!"/>
-				<button label="Cancel"/>
+				<button label="Map It!" oncommand="showMap();"/>
+				<button label="Get Directions!" oncommand="showDirections();"/>
+				<button label="Cancel" oncommand="window.close();"/>
 			</hbox>
 		</vbox>
 
