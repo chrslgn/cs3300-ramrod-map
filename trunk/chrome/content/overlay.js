@@ -25,7 +25,7 @@ window.addEventListener('load', function() {
 	showOnMap.addEventListener('command', function(e) {
 		var c = new Controller();
 		prefs.addObserver('', c.preferences, false);
-		Components.utils.reportError(gContextMenu.target.ownerDocument.getSelection()); // DEBUG
+	//	Components.utils.reportError(gContextMenu.target.ownerDocument.getSelection()); // DEBUG
 		c.mapAddress(gContextMenu.target.ownerDocument.getSelection());
 	}, true);
 	
