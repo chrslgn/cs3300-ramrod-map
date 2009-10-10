@@ -13,14 +13,14 @@ window.addEventListener('load', function() {
 		addrList.appendItem(addressArray[i].toString());
 	}
 	
-	document.getElementById("show-map").addEventListener("oncommand", function() {
+	document.getElementById("show-map").addEventListener("command", function(e) {
 		var addr = document.getElementById("address-list").getSelectedItem(0).getAttribute("label");
 		var link = GoogleMap.getLinkToAddress(addr);
 		
 		gBrowser.selectedTab = gBrowser.addTab(link);
 	},false);
 	
-	document.getElementById("show-directions").addEventListener("oncommand", function() {
+	document.getElementById("show-directions").addEventListener("command", function(e) {
 		
 		var addr = document.getElementById("address-list").getSelectedItem(0).getAttribute("label");
 		var link = GoogleMap.getLinkToAddressDirection(addr, c.getPreferences().getMyLocation());
