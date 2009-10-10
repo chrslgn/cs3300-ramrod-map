@@ -29,7 +29,7 @@ var Preferences = {
 	},
 	
 	setMyLocation: function(a) {
-		var addr = Address.fromString(addr);
+		var addr = Address.fromString(a);
 		
 		// if we can't parse it, just use a string
 		if (!addr)
