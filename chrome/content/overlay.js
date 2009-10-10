@@ -20,4 +20,16 @@ window.addEventListener('load', function() {
 		if (c.getPreferences().getParserOn())
 			c.parsePage();
 	}, true);
+	
+	var showOnMap = document.getElementById('show-on-map');
+	showOnMap.addEventListener('command', function(e) {
+		var c = new Controller();
+		prefs.addObserver('', c.preferences, false);
+	//	Components.utils.reportError(gContextMenu.target.ownerDocument.getSelection()); // DEBUG
+		c.mapAddress(gContextMenu.target.ownerDocument.getSelection());
+	}, true);
+	
+	document.getElementById("contentAreaContextMenu").addEventListener('popupshowing', function(e) {
+		document.getElementById('show-on-map').hidden = !gContextMenu.isTextSelected;
+	}, false);
 }, false);

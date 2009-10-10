@@ -19,7 +19,7 @@
 </statusbar>
 
 <popup id="contentAreaContextMenu">
-  <menuitem id="show-on-map" disabled="true" label="Show on map"/>
+  <menuitem id="show-on-map" disabled="false" label="Show on map"/>
 </popup>
 
 </overlay>
