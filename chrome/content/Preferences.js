@@ -29,7 +29,13 @@ var Preferences = {
 	},
 	
 	setMyLocation: function(a) {
-		Preferences.myLocation = a;
+		var addr = gBrowser.selectedTab = gBrowser.addTab(link);
+		
+		// if we can't parse it, just use a string
+		if (!addr)
+			addr = a;
+		
+		Preferences.myLocation = Address.fromString(addr);
 	},
 	
 	observe: function(subject, topic, data) {
