@@ -3,7 +3,7 @@ window.addEventListener('load', function() {
 	var browser = window.opener.getBrowser();
 	var doc = window.opener.content.document;
 	var c = doc.SimpleMap;
-	Components.utils.reportError(c.addresses); // DEBUG
+//	Components.utils.reportError(c.addresses); // DEBUG
 	
 	var addressArray = c.addresses;
 	var addrArrayLen = addressArray.length;
