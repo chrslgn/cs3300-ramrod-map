@@ -9,6 +9,6 @@ var Tagger = function(bodyDOM) {
 		var link = GoogleMap.getLinkToAddress(address);
 		var results = this.DOM.innerHTML.match(ex);
 	//	Components.utils.reportError(results[0]); // DEBUG
-		this.DOM.innerHTML = this.DOM.innerHTML.replace(results[0], results[0] + '<br/><a href="' + link + '">map this</a>');
+		this.DOM.innerHTML = this.DOM.innerHTML.replace(results[0], results[0] + '<br/><a href="' + link + '">'+ address.getStreet() +', '+ address.getCity() +', '+ address.getState() +', '+ address.getZip() +'</a>');
 	};
 };
